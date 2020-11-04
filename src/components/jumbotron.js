@@ -6,7 +6,7 @@ function Jumbotron() {
         <div className="jumbotron d-flex flex-column align-items-center p-4">
             <h1 className="display-4">Employee Directory</h1>
             <p className="lead">Search for employees by using the search bar provided.</p>
-            <hr />
+            <hr className="hr" />
         </div>
     );
 }

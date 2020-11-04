@@ -1,39 +1,79 @@
 import React from "react";
 import "../styles/table.css"
+import axios from "axios";
 
-function Table(props) {
-    return (
-        <table className="table table-striped">
+class Table extends React.Component {
+
+    state = {
+        employees: []
+    };
+
+    componentDidMount() {
+        axios.get("https://randomuser.me/api/?results=50").then(response => {
+            console.log(response.data.results);
+            this.setState({
+                employees: response.data.results
+            })
+        })
+    }
+
+
+
+    render() {
+        return (
+            <table className="table table-striped">
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-            <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
+            <td>mark92@gmail.com</td>
+            <td>28</td>
             </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            </tr>
+            {this.state.employees.map(emp => (
+                <>
+                <tr>
+                <td>{emp.name.first}</td>
+                <td>{emp.name.last}</td>
+                <td>{emp.email}</td>
+                <td>{emp.dob.age}</td>
+                </tr>
+                </>
+            ))}
         </tbody>
         </table>
-    );
+        )
+    }
 }
+
+// function Table(props) {
+//     return (
+//         <table className="table table-striped">
+//         <thead>
+//             <tr>
+//             <th scope="col">Id</th>
+//             <th scope="col">Name</th>
+//             <th scope="col">Email</th>
+//             <th scope="col">Age</th>
+//             </tr>
+//         </thead>
+//         <tbody>
+//             <tr>
+//             <th scope="row">1</th>
+//             <td>Mark</td>
+//             <td>Otto</td>
+//             <td>@mdo</td>
+//             </tr>
+//         </tbody>
+//         </table>
+//     );
+// }
 
 export default Table;

@@ -1,0 +1,7 @@
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 75%;               
+    background-color: rgb(204, 80, 80);
+}
