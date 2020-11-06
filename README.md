@@ -1,8 +1,8 @@
 # Employee Directory
 
-![](Assets/Images/home.PNG)
+![](public/Assets/Images/home.PNG)
 
-![](Assets/Images/search.PNG)
+![](public/Assets/Images/search.PNG)
 
 Application link:
 https://fatmoogle.github.io/Employee_Directory/
