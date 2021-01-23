@@ -81,40 +81,5 @@ class Table extends React.Component {
     }
 }
 
-// function Table(props) {
-//     return (
-//         <table className="table table-striped">
-//         <thead>
-//             <tr>
-//             <th scope="col">Id</th>
-//             <th scope="col">Name</th>
-//             <th scope="col">Email</th>
-//             <th scope="col">Age</th>
-//             </tr>
-//         </thead>
-//         <tbody>
-//             <tr>
-//             <th scope="row">1</th>
-//             <td>Mark</td>
-//             <td>Otto</td>
-//             <td>@mdo</td>
-//             </tr>
-//         </tbody>
-//         </table>
-//     );
-// }
 
 export default Table;
-
-// function ResultList(props) {
-//     return (
-//       <ul className="list-group">
-//         {props.results.map(result => (
-//           <li className="list-group-item" key={result.id}>
-//             <img alt={result.title} className="img-fluid" src={result.images.original.url} />
-//           </li>
-//         ))}
-//       </ul>
-//     );
-//   }
-  
